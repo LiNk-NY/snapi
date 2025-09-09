@@ -34,6 +34,7 @@
 #'
 #' @importFrom GenomicRanges makeGPosFromDataFrame
 #' @importFrom httr2 request req_url_query req_perform resp_body_json
+#' @importFrom Seqinfo genome<-
 #'
 #' @details The Clinical Tables SNP API provides information about single
 #'   nucleotide polymorphisms (SNPs) from the dbSNP database. The API returns
@@ -94,5 +95,7 @@ snp_search <- function(
     gmcols <- do.call(rbind.data.frame, display_data)
     names(gmcols) <- c("rsids", "seqnames", "pos", "alleles", "genes")
 
-    makeGPosFromDataFrame(gmcols, keep.extra.columns = TRUE)
+    res <- makeGPosFromDataFrame(gmcols, keep.extra.columns = TRUE)
+    genome(res) <- assembly
+    res
 }
