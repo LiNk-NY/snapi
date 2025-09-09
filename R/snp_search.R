@@ -65,6 +65,7 @@
 #'
 #' @examples
 #' snp_search("rs7927381")
+#' @export
 snp_search <- function(
     terms,
     maxList = 7L,
