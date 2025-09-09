@@ -4,24 +4,12 @@
 \alias{snp_search}
 \title{Query the Clinical Tables SNP API for a given rsID}
 \usage{
-snp_search(
-  terms,
-  maxList = 7L,
-  count = 7L,
-  offset = 0L,
-  assembly = c("GRCh38", "GRCh37")
-)
+snp_search(terms, count = 7L, offset = 0L, assembly = c("GRCh38", "GRCh37"))
 }
 \arguments{
 \item{terms}{(required) The search string (e.g., just a part of a word) for
 which to find matches in the list. More than one partial word can be
 present in "terms", in which case there is an implicit AND between them.}
-
-\item{maxList}{(default 7; optional) Optional, with a default of 7. Specifies
-the number of results requested, up to the upper limit of 500. If present
-but the value is empty, 500 will be used. Note that this parameter does not
-support pagination, see "count" and "offset" below for details on
-pagination support.}
 
 \item{count}{(default 7) The number of results to retrieve (page size). The
 maximum count allowed is 500, see "offset" below on pagination support.}

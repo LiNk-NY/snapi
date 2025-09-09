@@ -10,12 +10,6 @@
 #'   which to find matches in the list. More than one partial word can be
 #'   present in "terms", in which case there is an implicit AND between them.
 #'
-#' @param maxList (default 7; optional) Optional, with a default of 7. Specifies
-#'   the number of results requested, up to the upper limit of 500. If present
-#'   but the value is empty, 500 will be used. Note that this parameter does not
-#'   support pagination, see "count" and "offset" below for details on
-#'   pagination support.
-#'
 #' @param count (default 7) The number of results to retrieve (page size). The
 #'   maximum count allowed is 500, see "offset" below on pagination support.
 #'
@@ -70,7 +64,6 @@
 #' @export
 snp_search <- function(
     terms,
-    maxList = 7L,
     count = 7L,
     offset = 0L,
     assembly = c("GRCh38", "GRCh37")
@@ -84,7 +77,7 @@ snp_search <- function(
 
     response <- request(.CLINTAB_BASE_URL) |>
         req_url_query(
-            terms = terms, maxList = maxList, count = count, offset = offset,
+            terms = terms, count = count, offset = offset,
             df = df, sf = sf, cf = "rsNum",
         ) |>
         req_perform() |>
