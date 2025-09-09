@@ -76,6 +76,9 @@ snp_search <- function(
         df <- "rsNum,37.chr,37.pos,37.alleles,37.gene"
     sf <- df
 
+    if (!identical(length(terms), 1L))
+        terms <- paste(terms, collapse = " ")
+
     response <- request(.CLINTAB_BASE_URL) |>
         req_url_query(
             terms = terms, count = count, offset = offset,
