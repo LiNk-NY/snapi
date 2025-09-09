@@ -92,6 +92,9 @@ snp_search <- function(
 
     display_data <- response[[4L]]
 
+    if (!length(display_data))
+        stop("No results found.")
+
     gmcols <- do.call(rbind.data.frame, display_data)
     names(gmcols) <- c("rsids", "seqnames", "pos", "alleles", "genes")
 
