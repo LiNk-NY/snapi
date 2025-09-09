@@ -33,36 +33,8 @@ on the total number of results that can be retrieved (offset + count) is
 system capacity and/or other factors. Please see the FAQ page on how to
 sign up to our email list to be notified of any changes or new features.}
 
-\item{q}{(optional) additional query string used to further constrain the
-results returned by the "terms" field. Unlike the terms field, "q" is not
-automatically wildcarded, but can include wildcards and can specify field
-names. See the Elasticsearch query string page for documentation of
-supported syntax.}
-
-\item{df}{\verb{rsNum, 38.chr, 38.pos, 38.alleles, 38.gene}    A comma-separated list
-of display fields (from the fields section below) which are intended for
-the user to see when looking at the results. The parameter "ef" (see below)
-may also be used to specify the data fields to retrieve. The main
-difference is that the value of "df" is always a string (for display),
-while the value for "ef" could be a json object when the field value has a
-complex structure.}
-
-\item{sf}{\verb{rsNum, 38.chr, 38.pos, 38.alleles, 38.gene} A comma-separated list
-of fields to be searched.}
-
-\item{cf}{\code{rsNum} A field to regard as the "code" for the returned item data.}
-
-\item{ef}{A list of additional fields to be returned for each retrieved list
-item. (See the Output format section for how the data for fields is
-returned.) If you wish the keys in the returned data hash to be something
-other than the field names, you can specify an alias for the field name by
-separating it from its field name with a colon, e.g.,
-"ef=field_name1:alias1,field2,field_name3:alias3,etc. Note that not every
-field specified in the ef parameter needs to have an alias. The parameter
-"df" (see above) may also be used to specify the data fields to retrieve.
-The main difference is that the value of "df" is always a string (for
-display), while the value for "ef" could be a json object when the field
-value has a complex structure.}
+\item{assembly}{(default "GRCh38") The genome assembly to use for genomic
+coordinates. Supported values are "GRCh38" (default) and "GRCh37".}
 }
 \value{
 A GPos object with genomic ranges for each SNP, or NULL if the input
