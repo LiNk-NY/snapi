@@ -75,6 +75,8 @@ always has the value "GRCh37"
 }
 \examples{
 snp_search("rs7927381")
+snp_search("TP53")
+
 }
 \seealso{
 \url{https://clinicaltables.nlm.nih.gov/apidoc/snps/v3/doc.html}

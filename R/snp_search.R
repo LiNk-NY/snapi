@@ -65,6 +65,8 @@
 #'
 #' @examples
 #' snp_search("rs7927381")
+#' snp_search("TP53")
+#'
 #' @export
 snp_search <- function(
     terms,
