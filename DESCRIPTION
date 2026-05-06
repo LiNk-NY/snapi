@@ -1,6 +1,6 @@
 Package: snapi
 Title: Query dbSNP dataset using the Clinical Table Search Service
-Version: 0.99.1
+Version: 0.99.2
 Authors@R: 
     person("Marcel", "Ramos", , "marcel.ramos@sph.cuny.edu",
     c("aut", "cre"), c(ORCID = "0000-0002-3242-0582"))
