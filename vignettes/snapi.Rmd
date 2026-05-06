@@ -118,7 +118,7 @@ The `genome()` slot of the returned object is set to the requested assembly
 The package queries the Clinical Tables SNP Search API at:
 
 ```
-https://clinicaltables.nlm.nih.gov/api/snps/v3/search
+https://clinicaltables.nlm.nih.gov/api/snps/v3/search (+ query parameters)
 ```
 
 The underlying index is built from the dbSNP JSON data release. Both GRCh37

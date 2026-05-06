@@ -172,7 +172,7 @@ assembly (`"GRCh38"` or `"GRCh37"`).
 
 The package queries the Clinical Tables SNP Search API at:
 
-    https://clinicaltables.nlm.nih.gov/api/snps/v3/search
+    https://clinicaltables.nlm.nih.gov/api/snps/v3/search (+ query parameters)
 
 The underlying index is built from the dbSNP JSON data release. Both
 GRCh37 and GRCh38 assemblies are indexed. Full API documentation is
@@ -230,4 +230,3 @@ sessionInfo()
 #> [34] GenomicRanges_1.65.0 tools_4.6.0          BiocGenerics_0.59.0
 #> [37] remotes_2.5.0        desc_1.4.3
 ```
-
