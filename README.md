@@ -11,7 +11,7 @@ making them immediately usable in Bioconductor workflows.
 
 # Installation
 
-```r
+``` r
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 
@@ -20,7 +20,7 @@ BiocManager::install("LiNk-NY/snapi")
 
 # Usage
 
-```r
+``` r
 library(snapi)
 ```
 
@@ -44,7 +44,7 @@ snp_search("rs7927381")
 
 ## Search by gene symbol
 
-```r
+``` r
 snp_search("TP53")
 #> UnstitchedGPos object with 7 positions and 3 metadata columns:
 #>       seqnames       pos strand |        rsids     alleles       genes
@@ -64,7 +64,7 @@ snp_search("TP53")
 
 Multiple terms are combined with an implicit AND:
 
-```r
+``` r
 snp_search(c("rs12345", "CRYBB2P1"))
 #> UnstitchedGPos object with 3 positions and 3 metadata columns:
 #>       seqnames       pos strand |        rsids     alleles            genes
@@ -78,7 +78,7 @@ snp_search(c("rs12345", "CRYBB2P1"))
 
 ## Control the number of results
 
-```r
+``` r
 snp_search("TP53", count = 20L)
 #> UnstitchedGPos object with 20 positions and 3 metadata columns:
 #>        seqnames       pos strand |        rsids     alleles       genes
@@ -122,7 +122,7 @@ Use `count` (page size, max 500) and `offset` (0-based start) together.
 The total number of retrievable results (offset + count) is capped at
 7,500.
 
-```r
+``` r
 snp_search("TP53", count = 50L, offset = 50L)
 #> UnstitchedGPos object with 50 positions and 3 metadata columns:
 #>        seqnames       pos strand |        rsids     alleles       genes
@@ -146,24 +146,24 @@ snp_search("TP53", count = 50L, offset = 50L)
 
 ## `snp_search()`
 
-snp_search(terms, count = 7L, offset = 0L, assembly = c("GRCh38", "GRCh37"))
+    snp_search(terms, count = 7L, offset = 0L, assembly = c("GRCh38", "GRCh37"))
 
-| Argument   | Default    | Description |
+| Argument   | Default      | Description                                                                                 |
 |------------|--------------|---------------------------------------------------------------------------------------------|
 | `terms`    | *(required)* | Search string or character vector of terms. Multiple terms are joined with an implicit AND. |
-| `count`    | `7`        | Number of results to return (page size). Maximum is 500. |
-| `offset`   | `0`        | 0-based starting result index for pagination. |
-| `assembly` | `"GRCh38"` | Genome assembly for reported coordinates. One of `"GRCh38"` or `"GRCh37"`. |
+| `count`    | `7`          | Number of results to return (page size). Maximum is 500.                                    |
+| `offset`   | `0`          | 0-based starting result index for pagination.                                               |
+| `assembly` | `"GRCh38"`   | Genome assembly for reported coordinates. One of `"GRCh38"` or `"GRCh37"`.                  |
 
 **Returns:** A `GPos` object (from
 [`GenomicRanges`](https://bioconductor.org/packages/GenomicRanges/))
 with one entry per SNP. Extra columns carried on the object include:
 
-| Column     | Description |
+| Column    | Description                                         |
 |-----------|-----------------------------------------------------|
 | `rsids`   | Reference SNP accession number (e.g. `"rs7927381"`) |
-| `alleles`  | Alleles at the SNP position |
-| `genes`    | Gene symbols associated with the SNP |
+| `alleles` | Alleles at the SNP position                         |
+| `genes`   | Gene symbols associated with the SNP                |
 
 The `genome()` slot of the returned object is set to the requested
 assembly (`"GRCh38"` or `"GRCh37"`).
@@ -181,9 +181,9 @@ available at
 
 # Dependencies
 
-| Package | Role |
+| Package                                                             | Role                                       |
 |---------------------------------------------------------------------|--------------------------------------------|
-| [`httr2`](https://httr2.r-lib.org/) | HTTP requests to the Clinical Tables API |
+| [`httr2`](https://httr2.r-lib.org/)                                 | HTTP requests to the Clinical Tables API   |
 | [`GenomicRanges`](https://bioconductor.org/packages/GenomicRanges/) | Represents query results as `GPos` objects |
 
 # Session Information
