@@ -12,7 +12,8 @@ License: Artistic-2.0
 Depends: R (>= 4.1.0)
 Imports:
   httr2,
-  GenomicRanges
+  GenomicRanges,
+  Seqinfo
 Suggests:
   BiocStyle,
   knitr,
