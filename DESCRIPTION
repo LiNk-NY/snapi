@@ -9,6 +9,7 @@ Description: Obtain data from the dbSNP dataset as part of the Clinical
     newly released JSON data. Data for both GRCh37 and GRCh38 have been
     indexed.
 License: Artistic-2.0
+Depends: R (>= 4.1.0)
 Imports:
   httr2,
   GenomicRanges
